@@ -1,18 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="jkkv.scribble.HomeScreen">
+    tools:context="jkkv.scribble.HomeScreen"
+    android:orientation="vertical">
 
     <TextView
+        android:id="@+id/title"
+        android:layout_marginTop="100dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Welcome To Scribble"
+        android:layout_gravity="center_horizontal"
+        android:textSize= "28sp"
+        />,
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/newProject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Project"
+        android:layout_gravity="center"
+        android:layout_marginTop="120dp" />
+
+    <Button
+        android:id="@+id/loadExisiting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Load Existing"
+        android:layout_marginTop="20dp"
+        />
+
+</LinearLayout>
