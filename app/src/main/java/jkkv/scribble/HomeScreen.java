@@ -14,6 +14,7 @@ public class HomeScreen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
         canvasAct();
+        loadAct();
     }
 
     public void canvasAct(){
@@ -25,6 +26,17 @@ public class HomeScreen extends Activity {
                     startActivity(canvasAct);
                 }
             });
+    }
+
+    public void loadAct(){
+        newProject = (Button)findViewById(R.id.loadExisiting);
+        newProject.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent loadAct = new Intent(HomeScreen.this,LoadExisiting.class);
+                startActivity(loadAct);
+            }
+        });
     }
 
 }
