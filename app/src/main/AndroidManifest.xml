@@ -16,8 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Canvas" />
-        <activity android:name=".LoadExisiting"></activity>
+        <activity
+            android:name=".Canvas"
+            android:label="@string/title_activity_canvas"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".LoadExisting"></activity>
     </application>
 
 </manifest>
