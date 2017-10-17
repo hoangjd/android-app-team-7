@@ -11,7 +11,7 @@ import android.view.animation.AnimationUtils;
 
 public class Canvas extends AppCompatActivity {
 
-    public FloatingActionButton menu2, draw2;
+    public FloatingActionButton menu2, draw2, ie;
     public Animation open, close;
     public Boolean isOpen = false;
 
@@ -24,6 +24,7 @@ public class Canvas extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        ie = (FloatingActionButton) findViewById(R.id.importExport);
         draw2 = (FloatingActionButton) findViewById(R.id.draw);//make action buttons for draw and menu
         menu2 = (FloatingActionButton) findViewById(R.id.menu);
         open = AnimationUtils.loadAnimation(this, R.anim.butfunction);//wiring to anim folder
@@ -47,11 +48,15 @@ public class Canvas extends AppCompatActivity {
         if (isOpen){
             draw2.startAnimation(close);
             draw2.setClickable(false);
+            ie.startAnimation(close);
+            ie.setClickable(false);
             isOpen = false;
         }
         else
             draw2.startAnimation(open);
             draw2.setClickable(true);
+            ie.startAnimation(open);
+            ie.setClickable(true);
             isOpen = true;
 
     }
