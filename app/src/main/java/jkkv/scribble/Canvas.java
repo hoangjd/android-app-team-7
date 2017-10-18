@@ -2,20 +2,18 @@ package jkkv.scribble;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Toast;
 
 public class Canvas extends AppCompatActivity {
 
-    public FloatingActionButton menu2, draw2, ie;
+    public FloatingActionButton menu, draw, paintbrush, eraser, port, background, movinghand;
     public Animation open, close;
     public Boolean isOpen = false;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,40 +22,102 @@ public class Canvas extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ie = (FloatingActionButton) findViewById(R.id.importExport);
-        draw2 = (FloatingActionButton) findViewById(R.id.draw);//make action buttons for draw and menu
-        menu2 = (FloatingActionButton) findViewById(R.id.menu);
-        open = AnimationUtils.loadAnimation(this, R.anim.butfunction);//wiring to anim folder
+        //action buttons for canvas activity
+        menu = (FloatingActionButton) findViewById(R.id.menu);//make action buttons for draw and menu
+        draw = (FloatingActionButton) findViewById(R.id.draw);//drawing
+//        paintbrush = (FloatingActionButton) findViewById(R.id.paintbrush);//paintbrush button
+//        eraser = (FloatingActionButton) findViewById(R.id.eraser);//eraser button
+//        movinghand = (FloatingActionButton) findViewById(R.id.movinghand);//moving hand function
+//        background = (FloatingActionButton) findViewById(R.id.background);//background button
+//        port = (FloatingActionButton) findViewById(R.id.port);//import and/or export button
+
+
+//        open = AnimationUtils.loadAnimation(this, R.anim.butfunctionopen);//wiring to anim folder
         close = AnimationUtils.loadAnimation(this, R.anim.butfunctionclose);
 
 
-
-        menu2.setOnClickListener(new View.OnClickListener() {
+        menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 animateMenu();
             }
         });
 
-
-        //include onclick listeners once we have functionality to each of menu options
+//        draw.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//                public void onClick(View view) {
+//                //animateMenu();
+//                Toast.makeText(Canvas.this, "draw selected", Toast.LENGTH_SHORT).show();}
+//        });
+//
+//        paintbrush.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view) {animateMenu();}
+//        });
+//
+//        eraser.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view) {animateMenu();}
+//        });
+//
+//        movinghand.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view) {animateMenu();}
+//        });
+//
+//        background.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view) {animateMenu();}
+//        });
+//
+//        port.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view) {animateMenu();}
+//        });
     }
 
 
     public void animateMenu() {//says whether or not to open menu
-        if (isOpen){
-            draw2.startAnimation(close);
-            draw2.setClickable(false);
-            ie.startAnimation(close);
-            ie.setClickable(false);
+        if (isOpen){ //not open
+            draw.startAnimation(close);
+            draw.setClickable(false);
+
+//            paintbrush.startAnimation(close);
+//            paintbrush.setClickable(false);
+//
+//            eraser.startAnimation(close);
+//            eraser.setClickable(false);
+//
+//            movinghand.startAnimation(close);
+//            movinghand.setClickable(false);
+//
+//            background.startAnimation(close);
+//            background.setClickable(false);
+//
+//            port.startAnimation(close);
+//            port.setClickable(false);
+//
             isOpen = false;
         }
-        else
-            draw2.startAnimation(open);
-            draw2.setClickable(true);
-            ie.startAnimation(open);
-            ie.setClickable(true);
-            isOpen = true;
+        else //open
+            draw.startAnimation(open);
+        draw.setClickable(true);
+
+//            paintbrush.startAnimation(open);
+//            paintbrush.setClickable(true);
+//
+//            eraser.startAnimation(open);
+//            eraser.setClickable(true);
+//
+//            movinghand.startAnimation(open);
+//            movinghand.setClickable(true);
+//
+//            background.startAnimation(open);
+//            background.setClickable(true);
+//
+//            port.startAnimation(open);
+//            port.setClickable(true);
+        isOpen = true;
 
     }
 
