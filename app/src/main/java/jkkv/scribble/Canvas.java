@@ -8,10 +8,11 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Toast;
+import android.content.Intent;
 
 public class Canvas extends AppCompatActivity {
 
-    public FloatingActionButton menu, draw, paintbrush, eraser, port, background, movinghand, color, reflection;
+    public FloatingActionButton menu, draw, paintbrush, eraser, port, background, movinghand, color, reflection, home;
     public Animation open, close;
     public Boolean isOpen = false;
 
@@ -32,10 +33,19 @@ public class Canvas extends AppCompatActivity {
         port = (FloatingActionButton) findViewById(R.id.port);//import and/or export button
         color = (FloatingActionButton) findViewById(R.id.color);//change color button
         reflection = (FloatingActionButton) findViewById(R.id.reflection);//reflect image
+        home = (FloatingActionButton) findViewById(R.id.home);
 
         open = AnimationUtils.loadAnimation(this, R.anim.butfunctionopen);//wiring to anim folder
         close = AnimationUtils.loadAnimation(this, R.anim.butfunctionclose);
 
+
+        home.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent toHome = new Intent(Canvas.this,HomeScreen.class);
+                startActivity(toHome);
+            }
+        });
 
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,6 +121,9 @@ public class Canvas extends AppCompatActivity {
     public void animateMenu() {//says whether or not to open menu
         if (isOpen){ //not open
 
+            home.startAnimation(close);
+            home.setClickable(false);
+
             draw.startAnimation(close);
             draw.setClickable(false);
 
@@ -138,6 +151,9 @@ public class Canvas extends AppCompatActivity {
             isOpen = false;
         }
         else{ //open
+
+            home.startAnimation(open);
+            home.setClickable(true);
 
             draw.startAnimation(open);
             draw.setClickable(true);
