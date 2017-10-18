@@ -83,7 +83,7 @@
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="170dp"
         android:layout_marginEnd="16dp"
-        android:src="@drawable/ic_draw"
+        android:src="@drawable/ic_zoom_out_map"
         android:visibility="invisible"
         app:backgroundTint="@android:color/background_light" />
 
