@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class Canvas extends AppCompatActivity {
 
-    public FloatingActionButton menu, draw, paintbrush, eraser, port, background, movinghand;
+    public FloatingActionButton menu, draw, paintbrush, eraser, port, background, movinghand, color, reflection;
     public Animation open, close;
     public Boolean isOpen = false;
 
@@ -30,7 +30,8 @@ public class Canvas extends AppCompatActivity {
         movinghand = (FloatingActionButton) findViewById(R.id.movinghand);//moving hand function
         background = (FloatingActionButton) findViewById(R.id.background);//background button
         port = (FloatingActionButton) findViewById(R.id.port);//import and/or export button
-
+        color = (FloatingActionButton) findViewById(R.id.color);//change color button
+        reflection = (FloatingActionButton) findViewById(R.id.reflection);//reflect image
 
         open = AnimationUtils.loadAnimation(this, R.anim.butfunctionopen);//wiring to anim folder
         close = AnimationUtils.loadAnimation(this, R.anim.butfunctionclose);
@@ -42,6 +43,7 @@ public class Canvas extends AppCompatActivity {
                 animateMenu();
             }
         });
+        
 
         draw.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -87,6 +89,22 @@ public class Canvas extends AppCompatActivity {
                 animateMenu();
             }
         });
+
+        color.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Canvas.this, "change color", Toast.LENGTH_SHORT).show();
+                animateMenu();
+            }
+        });
+
+        reflection.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Canvas.this, "reflect image", Toast.LENGTH_SHORT).show();
+                animateMenu();
+            }
+        });
     }
 
 
@@ -111,6 +129,12 @@ public class Canvas extends AppCompatActivity {
             port.startAnimation(close);
             port.setClickable(false);
 
+            color.startAnimation(close);
+            color.setClickable(false);
+
+            reflection.startAnimation(close);
+            reflection.setClickable(false);
+
             isOpen = false;
         }
         else{ //open
@@ -132,6 +156,12 @@ public class Canvas extends AppCompatActivity {
 
             port.startAnimation(open);
             port.setClickable(true);
+
+            color.startAnimation(open);
+            color.setClickable(true);
+
+            reflection.startAnimation(open);
+            reflection.setClickable(true);
 
             isOpen = true;
 
