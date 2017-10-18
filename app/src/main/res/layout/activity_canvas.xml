@@ -21,14 +21,58 @@
     </android.support.design.widget.AppBarLayout>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/importExport"
+        android:id="@+id/background"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
+        android:layout_marginBottom="320dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="120dp"
-        android:visibility="invisible"
         android:src="@drawable/ic_draw"
+        android:visibility="invisible"
+        app:backgroundTint="@android:color/background_light" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/paintbrush"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="270dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_draw"
+        android:visibility="invisible"
+        app:backgroundTint="@android:color/background_light" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/eraser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="220dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_draw"
+        android:visibility="invisible"
+        app:backgroundTint="@android:color/background_light" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/movinghand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="170dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_draw"
+        android:visibility="invisible"
+        app:backgroundTint="@android:color/background_light" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/port"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="120dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_draw"
+        android:visibility="invisible"
         app:backgroundTint="@android:color/background_light" />
 
     <android.support.design.widget.FloatingActionButton
@@ -51,6 +95,9 @@
         android:src="@drawable/ic_menu"
         app:backgroundTint="@android:color/background_light" />
 
-    <include layout="@layout/content_canvas" />
+    <include
+        layout="@layout/content_canvas"
+        android:layout_gravity="bottom|start"
+        app:layout_anchorGravity="center_vertical|right" />
 
 </android.support.design.widget.CoordinatorLayout>
