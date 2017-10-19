@@ -51,7 +51,7 @@ public class HomeScreenTest {
         assertNotNull(homeScreen.findViewById(R.id.newProject));
     }
 
-    //Home: Senario 3
+    //Home: Senario 3  
 
     //Canvas: Senario 1
     @Test
