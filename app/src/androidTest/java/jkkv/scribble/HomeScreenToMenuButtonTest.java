@@ -38,5 +38,24 @@ public class HomeScreenToMenuButtonTest {
                 .check(matches(isClickable()));
         onView(withId(R.id.menu))
                 .perform(click());
+
+        onView(withId(R.id.draw))
+                .check(matches(isDisplayed()));
+        onView(withId(R.id.eraser))
+                .check(matches(isDisplayed()));
+        onView(withId(R.id.home))
+                .check(matches(isDisplayed()));
+        onView(withId(R.id.paintbrush))
+                .check(matches(isDisplayed()));
+        onView(withId(R.id.movinghand))
+                .check(matches(isDisplayed()));
+        onView(withId(R.id.background))
+                .check(matches(isDisplayed()));
+        onView(withId(R.id.port))
+                .check(matches(isDisplayed()));
+        onView(withId(R.id.color))
+                .check(matches(isDisplayed()));
+        onView(withId(R.id.reflection))
+                .check(matches(isDisplayed()));
     }
 }
