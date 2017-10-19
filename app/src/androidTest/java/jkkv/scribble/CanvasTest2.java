@@ -2,9 +2,7 @@ package jkkv.scribble;
 
 import android.app.Activity;
 import android.app.Instrumentation;
-import android.content.Intent;
 import android.support.test.rule.ActivityTestRule;
-import android.view.View;
 
 import org.junit.After;
 import org.junit.Before;
@@ -14,17 +12,14 @@ import org.junit.Test;
 import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.assertion.ViewAssertions.doesNotExist;
-import static android.support.test.espresso.assertion.ViewAssertions.matches;
-import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
-import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.*;
 
 /**
- * Created by viyatpatel on 10/18/17.
+ * Created by viyatpatel on 10/19/17.
  */
-public class HomeScreenTest {
+public class CanvasTest2 {
+
     @Rule
     public ActivityTestRule<HomeScreen> homeScreenActivityTestRule = new ActivityTestRule<HomeScreen>(HomeScreen.class);
 
@@ -37,26 +32,10 @@ public class HomeScreenTest {
         homeScreen = homeScreenActivityTestRule.getActivity();
     }
 
-    //Home: Senario 1
+    //Canvas: Senario 1
     @Test
-    public void testLaunchHome() {
-        View view = homeScreen.findViewById(R.id.newProject);
-        assertNotNull(view);
-    }
+    public void testLaunchOfCanvasOnButtonClick() {
 
-    //Home: Senario 2
-    @Test
-    public void testLaunchHomeAfterClose() {
-        assertNotNull(homeScreen.findViewById(R.id.newProject));
-        homeScreen.finish();
-        Intent intent = new Intent(homeScreen,homeScreen.getClass());
-        homeScreen.startActivityForResult(intent,1);
-        assertNotNull(homeScreen.findViewById(R.id.newProject));
-    }
-
-    //Home: Senario 3
-    @Test
-    public void testLaunchHomeFromMenu() {
         assertNotNull(homeScreen.findViewById(R.id.newProject));
 
         onView(withId(R.id.newProject)).perform(click());
@@ -67,13 +46,6 @@ public class HomeScreenTest {
 
         assertNotNull(canvas.findViewById(R.id.menu));
 
-        onView(withId(R.id.menu)).perform(click());
-
-        assertNotNull(canvas.findViewById(R.id.home));
-
-        onView(withId(R.id.home)).perform(click());
-
-        assertNotNull(homeScreen.findViewById(R.id.newProject));
     }
 
     @After
@@ -82,5 +54,3 @@ public class HomeScreenTest {
     }
 
 }
-
-
