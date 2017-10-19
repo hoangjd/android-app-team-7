@@ -222,7 +222,7 @@ public class HomeScreenTest {
         onView(withId(R.id.movinghand)).check(matches(not(isDisplayed())));
         onView(withId(R.id.background)).check(matches(not(isDisplayed())));
         onView(withId(R.id.port)).check(matches(not(isDisplayed())));
-        onView(withId(R.id.caolor)).check(matches(not(isDisplayed())));
+        onView(withId(R.id.color)).check(matches(not(isDisplayed())));
         onView(withId(R.id.reflection)).check(matches(not(isDisplayed())));
         assertNotNull(canvas);
     }

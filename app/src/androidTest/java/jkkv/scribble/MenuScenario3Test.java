@@ -20,11 +20,10 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
  */
 
 @RunWith(AndroidJUnit4.class)
-public class HomeScreenToMenuButtonTest {
+public class MenuScenario3Test {
 
     @Rule
     public ActivityTestRule<HomeScreen> homeScreenToMenuButtonTestRule = new ActivityTestRule<HomeScreen>(HomeScreen.class);
-
 
     @Test
     public void clickStartProjectButton_clickMenuButton_openMenuOptions(){
