@@ -39,10 +39,10 @@ public class CanvasToHomeTest {
         onView(withId(R.id.home))
                 .perform(click());
         onView(withId(R.id.title))
-                .check(matches(isDisplayed()));
+                .check(matches(isDisplayed()));//check if on homepage
         onView(withId(R.id.newProject))
                 .perform(click());
         onView(withId(R.id.menu))
-                .check(matches(isDisplayed()));
+                .check(matches(isDisplayed()));//check if on canvas
     }
 }
