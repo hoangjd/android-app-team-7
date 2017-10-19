@@ -93,8 +93,42 @@ public class HomeScreenTest {
     }
 
     //Canvas: Senario 2
+    @Test
+    public void testGoingBackToCanvasAfterMenu() {
+        assertNotNull(homeScreen.findViewById(R.id.newProject));
+
+        onView(withId(R.id.newProject)).perform(click());
+
+        Activity canvas = getInstrumentation().waitForMonitorWithTimeout(monitor,5000);
+
+        assertNotNull(canvas);
+
+        assertNotNull(canvas.findViewById(R.id.menu));
+
+        onView(withId(R.id.draw)).check(matches(not(isDisplayed())));
+        onView(withId(R.id.eraser)).check(matches(not(isDisplayed())));
+        onView(withId(R.id.home)).check(matches(not(isDisplayed())));
+        onView(withId(R.id.paintbrush)).check(matches(not(isDisplayed())));
+        onView(withId(R.id.movinghand)).check(matches(not(isDisplayed())));
+        onView(withId(R.id.background)).check(matches(not(isDisplayed())));
+        onView(withId(R.id.port)).check(matches(not(isDisplayed())));
+        onView(withId(R.id.color)).check(matches(not(isDisplayed())));
+        onView(withId(R.id.reflection)).check(matches(not(isDisplayed())));
+
+        onView(withId(R.id.menu)).perform(click());
+
+        onView(withId(R.id.draw)).check(matches(isDisplayed()));
+        onView(withId(R.id.eraser)).check(matches(isDisplayed()));
+        onView(withId(R.id.home)).check(matches(isDisplayed()));
+        onView(withId(R.id.paintbrush)).check(matches(isDisplayed()));
+        onView(withId(R.id.movinghand)).check(matches(isDisplayed()));
+        onView(withId(R.id.background)).check(matches(isDisplayed()));
+        onView(withId(R.id.port)).check(matches(isDisplayed()));
+        onView(withId(R.id.color)).check(matches(isDisplayed()));
+        onView(withId(R.id.reflection)).check(matches(isDisplayed()));
 
 
+    }
 
     //Canvas: Senario 3
     @Test
@@ -164,6 +198,8 @@ public class HomeScreenTest {
 
         Activity canvas = getInstrumentation().waitForMonitorWithTimeout(monitor,5000);
 
+        assertNotNull(canvas);
+
         onView(withId(R.id.menu)).perform(click());
 
         onView(withId(R.id.draw)).check(matches(isDisplayed()));
@@ -175,6 +211,7 @@ public class HomeScreenTest {
         onView(withId(R.id.port)).check(matches(isDisplayed()));
         onView(withId(R.id.color)).check(matches(isDisplayed()));
         onView(withId(R.id.reflection)).check(matches(isDisplayed()));
+        assertNotNull(canvas);
 
         onView(withId(R.id.menu)).perform(click());
 
@@ -185,8 +222,9 @@ public class HomeScreenTest {
         onView(withId(R.id.movinghand)).check(matches(not(isDisplayed())));
         onView(withId(R.id.background)).check(matches(not(isDisplayed())));
         onView(withId(R.id.port)).check(matches(not(isDisplayed())));
-        onView(withId(R.id.color)).check(matches(not(isDisplayed())));
+        onView(withId(R.id.caolor)).check(matches(not(isDisplayed())));
         onView(withId(R.id.reflection)).check(matches(not(isDisplayed())));
+        assertNotNull(canvas);
     }
 
     //Menu: Senario 3
