@@ -121,6 +121,17 @@ public class Canvas extends AppCompatActivity {
     public void animateMenu() {//says whether or not to open menu
         if (isOpen){ //not open
 
+            //to abide with espresso visibility standards view must be 90% visible
+            findViewById(R.id.home).setVisibility(View.INVISIBLE);
+            findViewById(R.id.draw).setVisibility(View.INVISIBLE);
+            findViewById(R.id.paintbrush).setVisibility(View.INVISIBLE);
+            findViewById(R.id.eraser).setVisibility(View.INVISIBLE);
+            findViewById(R.id.movinghand).setVisibility(View.INVISIBLE);
+            findViewById(R.id.background).setVisibility(View.INVISIBLE);
+            findViewById(R.id.port).setVisibility(View.INVISIBLE);
+            findViewById(R.id.color).setVisibility(View.INVISIBLE);
+            findViewById(R.id.reflection).setVisibility(View.INVISIBLE);
+
             home.startAnimation(close);
             home.setClickable(false);
 
@@ -151,6 +162,17 @@ public class Canvas extends AppCompatActivity {
             isOpen = false;
         }
         else{ //open
+
+            //to abide with espresso visibility standards view must be 90% visible
+            findViewById(R.id.home).setVisibility(View.VISIBLE);
+            findViewById(R.id.draw).setVisibility(View.VISIBLE);
+            findViewById(R.id.paintbrush).setVisibility(View.VISIBLE);
+            findViewById(R.id.eraser).setVisibility(View.VISIBLE);
+            findViewById(R.id.movinghand).setVisibility(View.VISIBLE);
+            findViewById(R.id.background).setVisibility(View.VISIBLE);
+            findViewById(R.id.port).setVisibility(View.VISIBLE);
+            findViewById(R.id.color).setVisibility(View.VISIBLE);
+            findViewById(R.id.reflection).setVisibility(View.VISIBLE);
 
             home.startAnimation(open);
             home.setClickable(true);
