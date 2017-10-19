@@ -51,7 +51,27 @@ public class HomeScreenTest {
         assertNotNull(homeScreen.findViewById(R.id.newProject));
     }
 
-    //Home: Senario 3  
+    //Home: Senario 3
+    @Test
+    public void testLaunchHomeFromMenu() {
+        assertNotNull(homeScreen.findViewById(R.id.newProject));
+
+        onView(withId(R.id.newProject)).perform(click());
+
+        Activity canvas = getInstrumentation().waitForMonitorWithTimeout(monitor,5000);
+
+        assertNotNull(canvas);
+
+        assertNotNull(canvas.findViewById(R.id.menu));
+
+        onView(withId(R.id.menu)).perform(click());
+
+        assertNotNull(canvas.findViewById(R.id.home));
+
+        onView(withId(R.id.home)).perform(click());
+
+        assertNotNull(homeScreen.findViewById(R.id.newProject));
+    }
 
     //Canvas: Senario 1
     @Test
