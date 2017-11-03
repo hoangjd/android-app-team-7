@@ -16,12 +16,16 @@ public class Canvas extends AppCompatActivity {
     public Animation open, close;
     public Boolean isOpen = false;
 
+    private OnDraw actualCanvas;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_canvas);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        actualCanvas = (OnDraw) findViewById(R.id.actualCanvas);
 
         //action buttons for canvas activity
         menu = (FloatingActionButton) findViewById(R.id.menu);//make action buttons for draw and menu
@@ -58,6 +62,7 @@ public class Canvas extends AppCompatActivity {
         draw.setOnClickListener(new View.OnClickListener(){
             @Override
                 public void onClick(View view) {
+                findViewById(R.id.actualCanvas).setVisibility(View.VISIBLE);
                 animateMenu();
                 Toast.makeText(Canvas.this, "draw", Toast.LENGTH_SHORT).show();}
         });
