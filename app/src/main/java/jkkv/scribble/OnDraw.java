@@ -14,10 +14,11 @@ public class OnDraw extends View {
 
     public int width;
     public int height;
+    protected boolean canDraw= false;
     private Bitmap mBitmap;
     private android.graphics.Canvas mCanvas;
     private Path mPath;
-    private Paint mPaint;
+    protected Paint mPaint;
     private float mX, mY;
     private static final float TOLERANCE = 5;
     Context context;
@@ -68,6 +69,10 @@ public class OnDraw extends View {
         }
     }
 
+    public void changeColor(String s){
+        mPaint.setColor(Color.parseColor("s"));
+    }
+
     private void upTouch(){
         mPath.lineTo(mX,mY);
     }
@@ -77,20 +82,23 @@ public class OnDraw extends View {
         float x = event.getX();
         float y = event.getY();
 
-        switch (event.getAction()){
-            case MotionEvent.ACTION_DOWN:
-                onStartTouch(x,y);
-                invalidate();
-                break;
-            case MotionEvent.ACTION_MOVE:
-                moveTouch(x,y);
-                invalidate();
-                break;
-            case MotionEvent.ACTION_UP:
-                upTouch();
-                invalidate();
-                break;
+        if (canDraw) {
 
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    onStartTouch(x, y);
+                    invalidate();
+                    break;
+                case MotionEvent.ACTION_MOVE:
+                    moveTouch(x, y);
+                    invalidate();
+                    break;
+                case MotionEvent.ACTION_UP:
+                    upTouch();
+                    invalidate();
+                    break;
+
+            }
         }
         return true;
     }

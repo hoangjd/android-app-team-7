@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
-
         <activity android:name=".HomeScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +20,8 @@
             android:name=".Canvas"
             android:label="@string/title_activity_canvas"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".LoadExisting"></activity>
+        <activity android:name=".LoadExisting" />
+        <activity android:name=".ColorPick"></activity>
     </application>
 
 </manifest>

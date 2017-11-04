@@ -27,7 +27,6 @@
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:visibility="invisible"
         />
 
 
@@ -42,7 +41,7 @@
         android:visibility="invisible"
         app:backgroundTint="@android:color/background_light" />
 
-    <android.support.design.widget.FloatingActionButton
+        <android.support.design.widget.FloatingActionButton
            android:id="@+id/reflection"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
@@ -53,7 +52,7 @@
            android:visibility="invisible"
            app:backgroundTint="@android:color/background_light" />
 
-       <android.support.design.widget.FloatingActionButton
+        <android.support.design.widget.FloatingActionButton
            android:id="@+id/color"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
@@ -64,7 +63,52 @@
            android:visibility="invisible"
            app:backgroundTint="@android:color/background_light" />
 
-       <android.support.design.widget.FloatingActionButton
+    <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:id="@+id/color1"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom|end"-->
+        <!--android:layout_marginBottom="370dp"-->
+        <!--android:layout_marginEnd="80dp"-->
+        <!--android:visibility="invisible"-->
+        <!--app:backgroundTint="@android:color/holo_blue_bright"-->
+        <!--app:fabSize="mini" />-->
+
+    <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:id="@+id/color2"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom|end"-->
+        <!--android:layout_marginBottom="370dp"-->
+        <!--android:layout_marginEnd="130dp"-->
+        <!--android:visibility="invisible"-->
+        <!--app:backgroundTint="@android:color/holo_purple"-->
+        <!--app:fabSize="mini" />-->
+
+    <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:id="@+id/color3"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom|end"-->
+        <!--android:layout_marginBottom="370dp"-->
+        <!--android:layout_marginEnd="180dp"-->
+        <!--android:visibility="invisible"-->
+        <!--app:backgroundTint="@android:color/holo_red_light"-->
+        <!--app:fabSize="mini" />-->
+
+    <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:id="@+id/color4"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom|end"-->
+        <!--android:layout_marginBottom="370dp"-->
+        <!--android:layout_marginEnd="230dp"-->
+        <!--android:visibility="invisible"-->
+        <!--app:backgroundTint="@android:color/holo_orange_light"-->
+        <!--app:fabSize="mini" />-->
+
+
+        <android.support.design.widget.FloatingActionButton
            android:id="@+id/background"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
@@ -76,7 +120,7 @@
            app:backgroundTint="@android:color/background_light"
            app:rippleColor="@android:drawable/screen_background_dark_transparent" />
 
-       <android.support.design.widget.FloatingActionButton
+        <android.support.design.widget.FloatingActionButton
            android:id="@+id/paintbrush"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
@@ -87,7 +131,7 @@
            android:visibility="invisible"
            app:backgroundTint="@android:color/background_light" />
 
-       <android.support.design.widget.FloatingActionButton
+        <android.support.design.widget.FloatingActionButton
            android:id="@+id/eraser"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
@@ -98,7 +142,7 @@
            android:visibility="invisible"
            app:backgroundTint="@android:color/background_light" />
 
-       <android.support.design.widget.FloatingActionButton
+        <android.support.design.widget.FloatingActionButton
            android:id="@+id/movinghand"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
@@ -109,7 +153,7 @@
            android:visibility="invisible"
            app:backgroundTint="@android:color/background_light" />
 
-       <android.support.design.widget.FloatingActionButton
+        <android.support.design.widget.FloatingActionButton
            android:id="@+id/port"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
@@ -120,7 +164,7 @@
            android:visibility="invisible"
            app:backgroundTint="@android:color/background_light" />
 
-       <android.support.design.widget.FloatingActionButton
+        <android.support.design.widget.FloatingActionButton
            android:id="@+id/draw"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
@@ -131,7 +175,7 @@
            android:visibility="invisible"
            app:backgroundTint="@android:color/background_light" />
 
-       <android.support.design.widget.FloatingActionButton
+        <android.support.design.widget.FloatingActionButton
            android:id="@+id/menu"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
