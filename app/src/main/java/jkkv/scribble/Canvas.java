@@ -27,6 +27,7 @@ public class Canvas extends AppCompatActivity {
     public Animation open;
     public Animation close;
     public Boolean isOpen = false;
+    public static Boolean backgroundOrDraw = false;
 
     private OnDraw actualCanvas;
 
@@ -109,8 +110,15 @@ public class Canvas extends AppCompatActivity {
         background.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                backgroundOrDraw = true;
+                Intent colorPickAct = new Intent(Canvas.this, ColorPick.class);
+                startActivity(colorPickAct);
+//                beforeColorChoose();
+                //Toast.makeText(Canvas.this, "change color", Toast.LENGTH_SHORT).show();
+                // while(!colorChoose){
+                //     beforeColorChoose();
+                //   }
                 animateMenu();
-                Toast.makeText(Canvas.this, "background", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -125,6 +133,7 @@ public class Canvas extends AppCompatActivity {
         color.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                backgroundOrDraw = false;
                 Intent colorPickAct = new Intent(Canvas.this, ColorPick.class);
                 startActivity(colorPickAct);
 //                beforeColorChoose();
