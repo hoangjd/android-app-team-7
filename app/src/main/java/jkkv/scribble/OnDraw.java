@@ -23,7 +23,7 @@ public class OnDraw extends View {
     protected Paint mPaint;
     private float mX, mY;
     private static final float TOLERANCE = 5;
-    public static String col = "#ff0000";
+    public static String col = "#000000";
     private ArrayList<Path> paths = new ArrayList<>();
     private ArrayList<String> colCol = new ArrayList<String>();
     //  private ArrayList<Paint> paintA = new ArrayList<>();
@@ -37,8 +37,8 @@ public class OnDraw extends View {
 
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
-        mPaint.setColor(Color.parseColor("#ff0000"));
-        colCol.add("#ff0000");
+        mPaint.setColor(Color.parseColor("#000000"));
+        colCol.add("#000000");
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeWidth(4f);

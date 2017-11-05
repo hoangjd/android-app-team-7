@@ -176,14 +176,14 @@
         app:fabSize="mini" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/color16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:layout_marginBottom="120dp"
-        android:layout_marginEnd="-200dp"
-        app:backgroundTint="#0000cc"
-        app:fabSize="mini" />
+    android:id="@+id/color16"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|center"
+    android:layout_marginBottom="120dp"
+    android:layout_marginEnd="-200dp"
+    app:backgroundTint="#0000cc"
+    app:fabSize="mini" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/color17"
@@ -192,7 +192,7 @@
         android:layout_gravity="bottom|center"
         android:layout_marginBottom="120dp"
         android:layout_marginEnd="-100dp"
-        app:backgroundTint="#6600cc"
+        app:backgroundTint="#5900b3"
         app:fabSize="mini" />
 
     <android.support.design.widget.FloatingActionButton
@@ -224,4 +224,52 @@
         app:backgroundTint="#009933"
         app:fabSize="mini" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/color21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="70dp"
+        android:layout_marginEnd="-200dp"
+        app:backgroundTint="#000000"
+        app:fabSize="mini" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/color22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="70dp"
+        android:layout_marginEnd="-100dp"
+        app:backgroundTint="#330066"
+        app:fabSize="mini" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/color23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="70dp"
+        app:backgroundTint="#800000"
+        app:fabSize="mini" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/color24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="70dp"
+        android:layout_marginEnd="100dp"
+        app:backgroundTint="#663300"
+        app:fabSize="mini"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/color25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="70dp"
+        android:layout_marginEnd="200dp"
+        app:backgroundTint="#004d00"
+        app:fabSize="mini" />
 </android.support.design.widget.CoordinatorLayout>
