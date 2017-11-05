@@ -75,7 +75,7 @@ public class Canvas extends AppCompatActivity {
         draw.setOnClickListener(new View.OnClickListener() {
             @Override
                 public void onClick(View view) {
-                actualCanvas.canDraw = true;
+                actualCanvas.canDraw = true;//ability to draw
                 animateMenu();
                 Toast.makeText(Canvas.this, "draw", Toast.LENGTH_SHORT).show();
             }
@@ -110,14 +110,9 @@ public class Canvas extends AppCompatActivity {
         background.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                backgroundOrDraw = true;
+                backgroundOrDraw = true; // need this for color choosing
                 Intent colorPickAct = new Intent(Canvas.this, ColorPick.class);
                 startActivity(colorPickAct);
-//                beforeColorChoose();
-                //Toast.makeText(Canvas.this, "change color", Toast.LENGTH_SHORT).show();
-                // while(!colorChoose){
-                //     beforeColorChoose();
-                //   }
                 animateMenu();
             }
         });
@@ -134,13 +129,9 @@ public class Canvas extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 backgroundOrDraw = false;
-                Intent colorPickAct = new Intent(Canvas.this, ColorPick.class);
+                Intent colorPickAct = new Intent(Canvas.this, ColorPick.class);//go to ColorPick
                 startActivity(colorPickAct);
-//                beforeColorChoose();
-                //Toast.makeText(Canvas.this, "change color", Toast.LENGTH_SHORT).show();
-               // while(!colorChoose){
-               //     beforeColorChoose();
-             //   }
+
                 animateMenu();
             }
         });
@@ -155,63 +146,7 @@ public class Canvas extends AppCompatActivity {
         });
     }
 
-//    public void beforeColorChoose(){
-//   //     colorChoose = false;
-//        findViewById(R.id.color1).setVisibility(View.VISIBLE);
-//        findViewById(R.id.color2).setVisibility(View.VISIBLE);
-//        findViewById(R.id.color3).setVisibility(View.VISIBLE);
-//        findViewById(R.id.color4).setVisibility(View.VISIBLE);
-//     //   if (colorChoose == false)
-//
-//    //    {
-//            color1.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    findViewById(R.id.color1).setVisibility(View.INVISIBLE);
-//                    colorChoose = true;
-//                    afterColorChoose();
-//                    Toast.makeText(Canvas.this, "Light Blue", Toast.LENGTH_SHORT).show();
-//                }
-//            });
-//
-//            color2.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    findViewById(R.id.color2).setVisibility(View.INVISIBLE);
-//                    colorChoose = true;
-//                    afterColorChoose();
-//                    Toast.makeText(Canvas.this, "Purple", Toast.LENGTH_SHORT).show();
-//                }
-//            });
-//
-//            color3.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    findViewById(R.id.color3).setVisibility(View.INVISIBLE);
-//                    colorChoose = true;
-//                    afterColorChoose();
-//                    Toast.makeText(Canvas.this, "Red", Toast.LENGTH_SHORT).show();
-//                }
-//            });
-//
-//            color4.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    findViewById(R.id.color4).setVisibility(View.INVISIBLE);
-//                    colorChoose = true;
-//                    afterColorChoose();
-//                    Toast.makeText(Canvas.this, "Light Orange", Toast.LENGTH_SHORT).show();
-//                }
-//            });
-//     //   }
-//    }
-//
-//    public void afterColorChoose(){
-//        findViewById(R.id.color1).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.color2).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.color3).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.color4).setVisibility(View.INVISIBLE);
-//    }
+
     public void animateMenu() { //says whether or not to open menu
         if (isOpen) { //not open
 

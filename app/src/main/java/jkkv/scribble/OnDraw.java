@@ -26,7 +26,6 @@ public class OnDraw extends View {
     public static String col = "#000000";
     private ArrayList<Path> paths = new ArrayList<>();
     private ArrayList<String> colCol = new ArrayList<String>();
-    //  private ArrayList<Paint> paintA = new ArrayList<>();
     Context context;
 
 
@@ -50,7 +49,7 @@ public class OnDraw extends View {
 
     }
     @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh){
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w,h,oldw,oldh);
 
         mBitmap = Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888);
@@ -59,8 +58,7 @@ public class OnDraw extends View {
     }
 
     @Override
-    protected void onDraw(android.graphics.Canvas canvas){
-        // super.onDraw(canvas);
+    protected void onDraw(android.graphics.Canvas canvas) {
         int i = 0;
         for (Path p : paths) {
             mPaint.setColor(Color.parseColor(colCol.get(i)));
@@ -68,12 +66,10 @@ public class OnDraw extends View {
             i++;
         }
 
-
-
     }
 
 
-    private void onStartTouch(float x,float y){
+    private void onStartTouch(float x,float y) {
         changeColor(col);
         mPath.reset();
         mPath.moveTo(x, y);
@@ -81,7 +77,7 @@ public class OnDraw extends View {
         mY = y;
     }
 
-    private void moveTouch(float x, float y){
+    private void moveTouch(float x, float y) {
         float dx = Math.abs(x-mX);
         float dy = Math.abs(y-mY);
         if(dx>= TOLERANCE || dy>= TOLERANCE){
@@ -92,13 +88,13 @@ public class OnDraw extends View {
         }
     }
 
-    public void changeColor(String s){
+    public void changeColor(String s) {
         colCol.add(colCol.size()-1, s);
 
 
     }
 
-    private void upTouch(){
+    private void upTouch() {
         mPath.lineTo(mX,mY);
         mCanvas.drawPath(mPath,mPaint);
 
@@ -108,7 +104,7 @@ public class OnDraw extends View {
     }
 
     @Override
-    public boolean onTouchEvent (MotionEvent event){
+    public boolean onTouchEvent (MotionEvent event) {
         float x = event.getX();
         float y = event.getY();
 

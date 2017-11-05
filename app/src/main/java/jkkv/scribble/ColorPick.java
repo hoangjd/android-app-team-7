@@ -77,16 +77,6 @@ public class ColorPick extends AppCompatActivity {
 
 
 
-//    public void changeColorOnDraw(){
-//        yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(OnDraw.col)));
-//        OnDraw.col= changeColorClick();
-//    }
-//
-//    public void ChangeColorOnBackground(){
-//        yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ffffff")));
-//        changeColorClick();
-//    }
-
     public void changeColorPicker() {
 
         if(Canvas.backgroundOrDraw==false) {
@@ -102,198 +92,195 @@ public class ColorPick extends AppCompatActivity {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#00ffff";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#00ffff")));
-
-                //  OnDraw.mPaintVals();
-
             }
         });
+
         color2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#cc99ff";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#cc99ff")));
-                //  OnDraw.mPaintVals();
 
             }
         });
+
         color3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#ffcccc";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ffcccc")));
-                //  OnDraw.mPaintVals();
 
             }
         });
+
         color4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#ffffcc";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ffffcc")));
-                //  OnDraw.mPaintVals();
 
             }
         });
+
         color5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#ffffff";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ffffff")));
-                //  OnDraw.mPaintVals();
 
             }
         });
+
         color6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#00ccff";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#00ccff")));
-                //  OnDraw.mPaintVals();
 
             }
         });
+
         color7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#a64dff";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#a64dff")));
-                //  OnDraw.mPaintVals();
 
             }
         });
+
         color8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#ff6666";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ff6666")));
-                //  OnDraw.mPaintVals();
 
             }
         });
+
         color9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#ffff00";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ffff00")));
-                //  OnDraw.mPaintVals();
 
             }
         });
+
         color10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#ccffcc";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ccffcc")));
-                //  OnDraw.mPaintVals();
 
             }
         });
+
         color11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#0052cc";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#0052cc")));
-                //  OnDraw.mPaintVals();
 
             }
         });
+
         color12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#8000ff";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#8000ff")));
-                //  OnDraw.mPaintVals();
 
             }
         });
+
         color13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#ff0000";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ff0000")));
-                //  OnDraw.mPaintVals();
 
             }
         });
+
         color14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#ffcc00";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ffcc00")));
-                //  OnDraw.mPaintVals();
 
             }
         });
+
         color15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#66ff66";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#66ff66")));
-                //  OnDraw.mPaintVals();
 
             }
         });
+
         color16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#0000cc";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#0000cc")));
-                //  OnDraw.mPaintVals();
 
             }
         });
+
         color17.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#5900b3";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#5900b3")));
-                //  OnDraw.mPaintVals();
 
             }
         });
+
         color18.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#cc0000";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#cc0000")));
-                //  OnDraw.mPaintVals();
 
             }
         });
+
         color19.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#cc9900";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#cc9900")));
-                //  OnDraw.mPaintVals();
 
             }
         });
+
         color20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#009933";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#009933")));
-                //  OnDraw.mPaintVals();
 
             }
         });
@@ -304,47 +291,46 @@ public class ColorPick extends AppCompatActivity {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#000000";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#000000")));
-                //  OnDraw.mPaintVals();
 
             }
         });
+
         color22.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#330066";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#330066")));
-                //  OnDraw.mPaintVals();
 
             }
         });
+
         color23.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#800000";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#800000")));
-                //  OnDraw.mPaintVals();
 
             }
         });
+
         color24.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#663300";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#663300")));
-                //  OnDraw.mPaintVals();
 
             }
         });
+
         color25.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Canvas.backgroundOrDraw==false)
                     OnDraw.col = "#004d00";
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#004d00")));
-                //  OnDraw.mPaintVals();
 
             }
         });
@@ -355,4 +341,4 @@ public class ColorPick extends AppCompatActivity {
 
 
 
-//}
+
