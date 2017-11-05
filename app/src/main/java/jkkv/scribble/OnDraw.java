@@ -26,7 +26,7 @@ public class OnDraw extends View {
     public static String col = "#ff0000";
     private ArrayList<Path> paths = new ArrayList<>();
     private ArrayList<String> colCol = new ArrayList<String>();
-  //  private ArrayList<Paint> paintA = new ArrayList<>();
+    //  private ArrayList<Paint> paintA = new ArrayList<>();
     Context context;
 
 
@@ -34,7 +34,6 @@ public class OnDraw extends View {
         super(context, attrs);
         this.context = context;
 
-        //mPath = new Path();
 
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
@@ -43,7 +42,7 @@ public class OnDraw extends View {
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeWidth(4f);
-       // paintA.add(mPaint);
+
         mPath = new Path();
         mCanvas = new android.graphics.Canvas();
         paths.add(mPath);
@@ -61,10 +60,10 @@ public class OnDraw extends View {
 
     @Override
     protected void onDraw(android.graphics.Canvas canvas){
-       // super.onDraw(canvas);
+        // super.onDraw(canvas);
         int i = 0;
         for (Path p : paths) {
-               mPaint.setColor(Color.parseColor(colCol.get(i)));
+            mPaint.setColor(Color.parseColor(colCol.get(i)));
             canvas.drawPath(p, mPaint);
             i++;
         }
@@ -94,8 +93,7 @@ public class OnDraw extends View {
     }
 
     public void changeColor(String s){
-       // mPaint.setColor(Color.parseColor(s));
-        colCol.add(s);
+        colCol.add(colCol.size()-1, s);
 
 
     }
