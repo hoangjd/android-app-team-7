@@ -35,10 +35,11 @@ public class Canvas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_canvas);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
         actualCanvas = (OnDraw) findViewById(R.id.actualCanvas);
+        actualCanvas.canDraw = true;// you can draw from the start
 
         //action buttons for canvas activity
         menu = (FloatingActionButton) findViewById(R.id.menu);//make action buttons for draw and menu
