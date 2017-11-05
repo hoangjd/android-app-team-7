@@ -19,12 +19,14 @@ public class OnDraw extends View {
     protected boolean canDraw= false;
     private Bitmap mBitmap;
     private android.graphics.Canvas mCanvas;
-    private Path mPath, nextPath;
+    private Path mPath;
     protected Paint mPaint;
     private float mX, mY;
     private static final float TOLERANCE = 5;
     public static String col = "#ff0000";
     private ArrayList<Path> paths = new ArrayList<>();
+    private ArrayList<String> colCol = new ArrayList<String>();
+  //  private ArrayList<Paint> paintA = new ArrayList<>();
     Context context;
 
 
@@ -37,38 +39,43 @@ public class OnDraw extends View {
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
         mPaint.setColor(Color.parseColor("#ff0000"));
+        colCol.add("#ff0000");
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeWidth(4f);
+       // paintA.add(mPaint);
         mPath = new Path();
         mCanvas = new android.graphics.Canvas();
         paths.add(mPath);
 
 
     }
-
-
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh){
         super.onSizeChanged(w,h,oldw,oldh);
 
         mBitmap = Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888);
         mCanvas = new android.graphics.Canvas(mBitmap);
+
     }
 
     @Override
     protected void onDraw(android.graphics.Canvas canvas){
        // super.onDraw(canvas);
+        int i = 0;
         for (Path p : paths) {
-            //Determine Paint color Here.
-            changeColor(col); // where myColor is your variable to use for this layer.
-            // This could be from an array/List of colors matching to Paths.
+               mPaint.setColor(Color.parseColor(colCol.get(i)));
             canvas.drawPath(p, mPaint);
+            i++;
         }
+
+
+
     }
 
 
     private void onStartTouch(float x,float y){
+        changeColor(col);
         mPath.reset();
         mPath.moveTo(x, y);
         mX = x;
@@ -87,19 +94,19 @@ public class OnDraw extends View {
     }
 
     public void changeColor(String s){
-      //  nextPath = new Path(mPath);
-       // mPath = new Path();
-      //  nextPaint = new Paint(mPaint);
-        mPaint.setColor(Color.parseColor(s));
+       // mPaint.setColor(Color.parseColor(s));
+        colCol.add(s);
+
 
     }
 
     private void upTouch(){
         mPath.lineTo(mX,mY);
         mCanvas.drawPath(mPath,mPaint);
-       // paths.add(mPath);
+
         mPath = new Path();
         paths.add(mPath);
+
     }
 
     @Override
