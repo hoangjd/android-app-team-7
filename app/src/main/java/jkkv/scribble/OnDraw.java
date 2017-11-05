@@ -41,7 +41,7 @@ public class OnDraw extends View {
         colCol.add("#000000");
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
-        mPaint.setStrokeWidth(4f);
+        mPaint.setStrokeWidth(12f);
 
         mPath = new Path();
         mCanvas = new android.graphics.Canvas();
