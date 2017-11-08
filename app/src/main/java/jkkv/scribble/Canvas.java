@@ -1,5 +1,7 @@
 package jkkv.scribble;
 
+import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -30,6 +32,7 @@ public class Canvas extends AppCompatActivity {
     public static Boolean backgroundOrDraw = false;
 
     private OnDraw actualCanvas;
+    View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,11 @@ public class Canvas extends AppCompatActivity {
         setContentView(R.layout.activity_canvas);
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
+
+        setContentView(R.layout.activity_canvas);
+        view = this.getWindow().getDecorView();
+        view.setBackgroundColor(Color.parseColor("#ffffff"));
+
 
         actualCanvas = (OnDraw) findViewById(R.id.actualCanvas);
         actualCanvas.canDraw = true;// you can draw from the start
@@ -113,8 +121,9 @@ public class Canvas extends AppCompatActivity {
             public void onClick(View view) {
                 backgroundOrDraw = true; // need this for color choosing
                 Intent colorPickAct = new Intent(Canvas.this, ColorPick.class);
-                startActivity(colorPickAct);
+                startActivityForResult(colorPickAct,1);
                 animateMenu();
+                //view.setBackgroundColor(Color.parseColor(col));
             }
         });
 
@@ -132,7 +141,6 @@ public class Canvas extends AppCompatActivity {
                 backgroundOrDraw = false;
                 Intent colorPickAct = new Intent(Canvas.this, ColorPick.class);//go to ColorPick
                 startActivity(colorPickAct);
-
                 animateMenu();
             }
         });
@@ -147,6 +155,15 @@ public class Canvas extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode,resultCode,data);
+        if(requestCode == 1 && resultCode == Activity.RESULT_OK) {
+            String color = data.getStringExtra("Data");
+            view = this.getWindow().getDecorView();
+            view.setBackgroundColor(Color.parseColor(color));
+        }
+    }//onActivityResult
 
     public void animateMenu() { //says whether or not to open menu
         if (isOpen) { //not open
