@@ -41,12 +41,13 @@ public class BackgroundTest {
         floatingActionButton2.perform(click());
 
         ViewInteraction floatingActionButton3 = onView(
+
                 allOf(withId(R.id.color21), isDisplayed()));
         floatingActionButton3.perform(click());
 
 
     }
-    //Background: scenario 2, testing background after working on an image
+    //Background: scenario 2
     @Test
     public void backgroundTest2() {
         ViewInteraction appCompatButton = onView(
@@ -78,6 +79,7 @@ public class BackgroundTest {
         floatingActionButton6.perform(click());
 
     }
+    //Background: Scenario 3
     @Test
     public void backgroundTest3() {
         ViewInteraction appCompatButton = onView(
