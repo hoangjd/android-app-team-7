@@ -13,26 +13,26 @@ public class HomeScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
-    canvasAct();
-    loadAct();
-}
+        canvasAct();
+        loadAct();
+    }
 
-    public void canvasAct(){
+    public void canvasAct() {
         newProject = (Button)findViewById(R.id.newProject);
-        newProject.setOnClickListener(new View.OnClickListener(){
+        newProject.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View view) {
                 Intent canvasAct = new Intent(HomeScreen.this,Canvas.class);
                 startActivity(canvasAct);
             }
         });
     }
 
-    public void loadAct(){
+    public void loadAct() {
         newProject = (Button)findViewById(R.id.loadExisiting);
-        newProject.setOnClickListener(new View.OnClickListener(){
+        newProject.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View view) {
                 Intent loadAct = new Intent(HomeScreen.this,LoadExisting.class);
                 startActivity(loadAct);
             }

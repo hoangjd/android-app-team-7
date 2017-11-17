@@ -3,11 +3,11 @@
   <component name="CheckStyle-IDEA">
     <option name="configuration">
       <map>
-        <entry key="active-configuration" value="LOCAL_FILE:/Users/Joe/Documents/VCU/355 Project/cmsc355_checkstyle_conf.xml:cmsc355_checkStyle" />
+        <entry key="active-configuration" value="LOCAL_FILE:/Users/Koi/AndroidStudioProjects/AndroidPaintApp/cmsc355_checkstyle_conf.xml:cmsc355checkstyledude" />
         <entry key="checkstyle-version" value="8.4" />
         <entry key="location-0" value="BUNDLED:(bundled):Sun Checks" />
         <entry key="location-1" value="BUNDLED:(bundled):Google Checks" />
-        <entry key="location-2" value="LOCAL_FILE:/Users/Joe/Documents/VCU/355 Project/cmsc355_checkstyle_conf.xml:cmsc355_checkStyle" />
+        <entry key="location-2" value="LOCAL_FILE:/Users/Koi/AndroidStudioProjects/AndroidPaintApp/cmsc355_checkstyle_conf.xml:cmsc355checkstyledude" />
         <entry key="scan-before-checkin" value="false" />
         <entry key="scanscope" value="JavaOnly" />
         <entry key="suppress-errors" value="false" />

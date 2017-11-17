@@ -80,23 +80,22 @@ public class ColorPick extends AppCompatActivity {
 
     public void changeColorPicker() {
 
-        if(Canvas.backgroundOrDraw==false) {
+        if (Canvas.backgroundOrDraw == false) {
             yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(OnDraw.col)));
-        }
-        else {
+        } else {
             yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ffffff")));
         }
 
         color1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#00ffff";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#00ffff");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#00ffff");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#00ffff")));
@@ -106,13 +105,13 @@ public class ColorPick extends AppCompatActivity {
         color2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#cc99ff";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#cc99ff");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#cc99ff");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#cc99ff")));
@@ -123,13 +122,13 @@ public class ColorPick extends AppCompatActivity {
         color3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#ffcccc";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#ffcccc");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#ffcccc");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ffcccc")));
@@ -140,13 +139,13 @@ public class ColorPick extends AppCompatActivity {
         color4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#ffffcc";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#ffffcc");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#ffffcc");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ffffcc")));
@@ -157,13 +156,13 @@ public class ColorPick extends AppCompatActivity {
         color5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#ffffff";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#ffffff");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#ffffff");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ffffff")));
@@ -174,13 +173,13 @@ public class ColorPick extends AppCompatActivity {
         color6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#00ccff";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#00ccff");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#00ccff");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#00ccff")));
@@ -191,13 +190,13 @@ public class ColorPick extends AppCompatActivity {
         color7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#a64dff";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#a64dff");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#a64dff");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#a64dff")));
@@ -208,13 +207,13 @@ public class ColorPick extends AppCompatActivity {
         color8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#ff6666";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#ff6666");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#ff6666");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ff6666")));
@@ -225,13 +224,13 @@ public class ColorPick extends AppCompatActivity {
         color9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#ffff00";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#ffff00");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#ffff00");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ffff00")));
@@ -242,13 +241,13 @@ public class ColorPick extends AppCompatActivity {
         color10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#ccffcc";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#ccffcc");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#ccffcc");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ccffcc")));
@@ -259,13 +258,13 @@ public class ColorPick extends AppCompatActivity {
         color11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#0052cc";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#0052cc");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#0052cc");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#0052cc")));
@@ -276,13 +275,13 @@ public class ColorPick extends AppCompatActivity {
         color12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#8000ff";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#8000ff");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#8000ff");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#8000ff")));
@@ -293,13 +292,13 @@ public class ColorPick extends AppCompatActivity {
         color13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#ff0000";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#ff0000");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#ff0000");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ff0000")));
@@ -310,13 +309,13 @@ public class ColorPick extends AppCompatActivity {
         color14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#ffcc00";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#ffcc00");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#ffcc00");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ffcc00")));
@@ -327,13 +326,13 @@ public class ColorPick extends AppCompatActivity {
         color15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#66ff66";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#66ff66");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#66ff66");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#66ff66")));
@@ -344,13 +343,13 @@ public class ColorPick extends AppCompatActivity {
         color16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#0000cc";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#0000cc");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#0000cc");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#0000cc")));
@@ -361,13 +360,13 @@ public class ColorPick extends AppCompatActivity {
         color17.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#5900b3";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#5900b3");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#5900b3");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#5900b3")));
@@ -378,13 +377,13 @@ public class ColorPick extends AppCompatActivity {
         color18.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#cc0000";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#cc0000");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#cc0000");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#cc0000")));
@@ -395,13 +394,13 @@ public class ColorPick extends AppCompatActivity {
         color19.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#cc9900";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#cc9900");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#cc9900");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#cc9900")));
@@ -412,13 +411,13 @@ public class ColorPick extends AppCompatActivity {
         color20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#009933";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#009933");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#009933");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#009933")));
@@ -429,13 +428,13 @@ public class ColorPick extends AppCompatActivity {
         color21.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#000000";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#000000");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#000000");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#000000")));
@@ -446,13 +445,13 @@ public class ColorPick extends AppCompatActivity {
         color22.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#330066";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#330066");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#330066");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#330066")));
@@ -463,13 +462,13 @@ public class ColorPick extends AppCompatActivity {
         color23.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#800000";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#800000");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#800000");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#800000")));
@@ -480,13 +479,13 @@ public class ColorPick extends AppCompatActivity {
         color24.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#663300";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#663300");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#663300");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#663300")));
@@ -497,13 +496,13 @@ public class ColorPick extends AppCompatActivity {
         color25.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Canvas.backgroundOrDraw==false) {
+                if (Canvas.backgroundOrDraw == false) {
                     OnDraw.col = "#004d00";
                 }
-                if(Canvas.backgroundOrDraw==true) {
-                    Intent i = new Intent();
-                    i.putExtra("Data","#004d00");
-                    setResult(RESULT_OK,i);
+                if (Canvas.backgroundOrDraw == true) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Data","#004d00");
+                    setResult(RESULT_OK,intent);
                     finish();
                 }
                 yourColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#004d00")));

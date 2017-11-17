@@ -38,8 +38,8 @@ public class Canvas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_canvas);
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
         setContentView(R.layout.activity_canvas);
         view = this.getWindow().getDecorView();
@@ -158,12 +158,14 @@ public class Canvas extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode,resultCode,data);
-        if(requestCode == 1 && resultCode == Activity.RESULT_OK) {
+
+        if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
             String color = data.getStringExtra("Data");
             view = this.getWindow().getDecorView();
             view.setBackgroundColor(Color.parseColor(color));
         }
-    }//onActivityResult
+    }
+    //onActivityResult
 
     public void animateMenu() { //says whether or not to open menu
         if (isOpen) { //not open

@@ -1,7 +1,10 @@
 package jkkv.scribble;
 
 import android.content.Context;
-import android.graphics.*;
+import android.graphics.Bitmap;
+import android.graphics.Path;
+import android.graphics.Paint;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -16,12 +19,13 @@ public class OnDraw extends View {
 
     public int width;
     public int height;
-    protected boolean canDraw= false;
-    private Bitmap mBitmap;
-    private android.graphics.Canvas mCanvas;
-    private Path mPath;
-    protected Paint mPaint;
-    private float mX, mY;
+    protected boolean canDraw = false;
+    private Bitmap mapBitmap;
+    private android.graphics.Canvas mapCanvas;
+    private Path mapPath;
+    protected Paint mapPaint;
+    private float mapX;
+    private float mapY;
     private static final float TOLERANCE = 5;
     public static String col = "#000000";
     private ArrayList<Path> paths = new ArrayList<>();
@@ -34,95 +38,98 @@ public class OnDraw extends View {
         this.context = context;
 
 
-        mPaint = new Paint();
-        mPaint.setAntiAlias(true);
-        mPaint.setColor(Color.parseColor("#000000"));
+        mapPaint = new Paint();
+        mapPaint.setAntiAlias(true);
+        mapPaint.setColor(Color.parseColor("#000000"));
         colCol.add("#000000");
-        mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setStrokeJoin(Paint.Join.ROUND);
-        mPaint.setStrokeWidth(12f);
+        mapPaint.setStyle(Paint.Style.STROKE);
+        mapPaint.setStrokeJoin(Paint.Join.ROUND);
+        mapPaint.setStrokeWidth(12f);
 
-        mPath = new Path();
-        mCanvas = new android.graphics.Canvas();
-        paths.add(mPath);
+        mapPath = new Path();
+        mapCanvas = new android.graphics.Canvas();
+        paths.add(mapPath);
 
-
-    }
-    @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        super.onSizeChanged(w,h,oldw,oldh);
-
-        mBitmap = Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888);
-        mCanvas = new android.graphics.Canvas(mBitmap);
 
     }
 
     @Override
+
+    protected void onSizeChanged(int width, int height, int oldw, int oldh) {
+        super.onSizeChanged(width,height,oldw,oldh);
+
+        mapBitmap = Bitmap.createBitmap(width,height,Bitmap.Config.ARGB_8888);
+        mapCanvas = new android.graphics.Canvas(mapBitmap);
+
+    }
+
+    @Override
+
     protected void onDraw(android.graphics.Canvas canvas) {
-        int i = 0;
+        int count = 0;
         for (Path p : paths) {
-            mPaint.setColor(Color.parseColor(colCol.get(i)));
-            canvas.drawPath(p, mPaint);
-            i++;
+            mapPaint.setColor(Color.parseColor(colCol.get(count)));
+            canvas.drawPath(p, mapPaint);
+            count++;
         }
 
     }
 
 
-    private void onStartTouch(float x,float y) {
+    private void onStartTouch(float exValue,float whyValue) {
         changeColor(col);
-        mPath.reset();
-        mPath.moveTo(x, y);
-        mX = x;
-        mY = y;
+        mapPath.reset();
+        mapPath.moveTo(exValue, whyValue);
+        mapX = exValue;
+        mapY = whyValue;
     }
 
-    private void moveTouch(float x, float y) {
-        float dx = Math.abs(x-mX);
-        float dy = Math.abs(y-mY);
-        if(dx>= TOLERANCE || dy>= TOLERANCE){
-            mPath.quadTo(mX,mY, (x+mX) / 2, (y+mY)/2);
-            mX = x;
-            mY = y;
+    private void moveTouch(float exValue, float whyValue) {
+        float dx = Math.abs(exValue - mapX);
+        float dy = Math.abs(whyValue - mapY);
+        if (dx >= TOLERANCE || dy >= TOLERANCE) {
+            mapPath.quadTo(mapX, mapY, (exValue + mapX) / 2, (whyValue + mapY) / 2);
+            mapX = exValue;
+            mapY = whyValue;
 
         }
     }
 
-    public void changeColor(String s) {
-        colCol.add(colCol.size()-1, s);
+    public void changeColor(String string) {
+        colCol.add(colCol.size() - 1, string);
 
 
     }
 
     private void upTouch() {
-        mPath.lineTo(mX,mY);
-        mCanvas.drawPath(mPath,mPaint);
+        mapPath.lineTo(mapX, mapY);
+        mapCanvas.drawPath(mapPath, mapPaint);
 
-        mPath = new Path();
-        paths.add(mPath);
+        mapPath = new Path();
+        paths.add(mapPath);
 
     }
 
     @Override
-    public boolean onTouchEvent (MotionEvent event) {
-        float x = event.getX();
-        float y = event.getY();
+    public boolean onTouchEvent(MotionEvent event) {
+        float exValue = event.getX();
+        float whyValue = event.getY();
 
         if (canDraw) {
-
             switch (event.getAction()) {
-                case MotionEvent.ACTION_DOWN:
-                    onStartTouch(x, y);
-                    invalidate();
-                    break;
-                case MotionEvent.ACTION_MOVE:
-                    moveTouch(x, y);
-                    invalidate();
-                    break;
-                case MotionEvent.ACTION_UP:
-                    upTouch();
-                    invalidate();
-                    break;
+              case MotionEvent.ACTION_DOWN:
+                  onStartTouch(exValue, whyValue);
+                  invalidate();
+                  break;
+              case MotionEvent.ACTION_MOVE:
+                  moveTouch(exValue, whyValue);
+                  invalidate();
+                  break;
+              case MotionEvent.ACTION_UP:
+                  upTouch();
+                  invalidate();
+                  break;
+              default: break;
 
             }
         }
