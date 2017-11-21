@@ -1,5 +1,7 @@
 package jkkv.scribble;
 
+import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -10,18 +12,42 @@ import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 import android.content.Intent;
 
+import static android.content.ClipData.newIntent;
+
 public class Canvas extends AppCompatActivity {
 
-    public FloatingActionButton menu, draw, paintbrush, eraser, port, background, movinghand, color, reflection, home;
-    public Animation open, close;
+    public FloatingActionButton menu;//, draw, paintbrush, eraser, port, background, movinghand, color, reflection, home;
+    public FloatingActionButton draw;
+    public FloatingActionButton paintbrush;
+    public FloatingActionButton eraser;
+    public FloatingActionButton port;
+    public FloatingActionButton background;
+    public FloatingActionButton movinghand;
+    public FloatingActionButton color;
+    public FloatingActionButton reflection;
+    public FloatingActionButton home;
+    public Animation open;
+    public Animation close;
     public Boolean isOpen = false;
+    public static Boolean backgroundOrDraw = false;
+
+    private OnDraw actualCanvas;
+    View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_canvas);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
+
+        setContentView(R.layout.activity_canvas);
+        view = this.getWindow().getDecorView();
+        view.setBackgroundColor(Color.parseColor("#ffffff"));
+
+
+        actualCanvas = (OnDraw) findViewById(R.id.actualCanvas);
+        actualCanvas.canDraw = true;// you can draw from the start
 
         //action buttons for canvas activity
         menu = (FloatingActionButton) findViewById(R.id.menu);//make action buttons for draw and menu
@@ -39,9 +65,9 @@ public class Canvas extends AppCompatActivity {
         close = AnimationUtils.loadAnimation(this, R.anim.butfunctionclose);
 
 
-        home.setOnClickListener(new View.OnClickListener(){
+        home.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 Intent toHome = new Intent(Canvas.this,HomeScreen.class);
                 startActivity(toHome);
             }
@@ -55,44 +81,53 @@ public class Canvas extends AppCompatActivity {
         });
         
 
-        draw.setOnClickListener(new View.OnClickListener(){
+        draw.setOnClickListener(new View.OnClickListener() {
             @Override
                 public void onClick(View view) {
+                actualCanvas.canDraw = true;//ability to draw
                 animateMenu();
-                Toast.makeText(Canvas.this, "draw", Toast.LENGTH_SHORT).show();}
+                Toast.makeText(Canvas.this, "draw", Toast.LENGTH_SHORT).show();
+            }
         });
 
-        paintbrush.setOnClickListener(new View.OnClickListener(){
+        paintbrush.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 animateMenu();
-                Toast.makeText(Canvas.this, "brush", Toast.LENGTH_SHORT).show();}
+                Toast.makeText(Canvas.this, "brush", Toast.LENGTH_SHORT).show();
+            }
         });
 
-        eraser.setOnClickListener(new View.OnClickListener(){
+        eraser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                actualCanvas.canDraw = false;
                 animateMenu();
                 Toast.makeText(Canvas.this, "eraser", Toast.LENGTH_SHORT).show();
             }
         });
 
-        movinghand.setOnClickListener(new View.OnClickListener(){
+        movinghand.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                actualCanvas.canDraw = false;
                 animateMenu();
                 Toast.makeText(Canvas.this, "moving hand", Toast.LENGTH_SHORT).show();
             }
         });
 
-        background.setOnClickListener(new View.OnClickListener(){
+        background.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                backgroundOrDraw = true; // need this for color choosing
+                Intent colorPickAct = new Intent(Canvas.this, ColorPick.class);
+                startActivityForResult(colorPickAct,1);
                 animateMenu();
-                Toast.makeText(Canvas.this, "background", Toast.LENGTH_SHORT).show();}
+                //view.setBackgroundColor(Color.parseColor(col));
+            }
         });
 
-        port.setOnClickListener(new View.OnClickListener(){
+        port.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(Canvas.this, "import/export", Toast.LENGTH_SHORT).show();
@@ -100,15 +135,18 @@ public class Canvas extends AppCompatActivity {
             }
         });
 
-        color.setOnClickListener(new View.OnClickListener(){
+        color.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Canvas.this, "change color", Toast.LENGTH_SHORT).show();
+                backgroundOrDraw = false;
+                Intent colorPickAct = new Intent(Canvas.this, ColorPick.class);//go to ColorPick
+                startActivity(colorPickAct);
                 animateMenu();
             }
         });
 
-        reflection.setOnClickListener(new View.OnClickListener(){
+
+        reflection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(Canvas.this, "reflect image", Toast.LENGTH_SHORT).show();
@@ -117,9 +155,20 @@ public class Canvas extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode,resultCode,data);
 
-    public void animateMenu() {//says whether or not to open menu
-        if (isOpen){ //not open
+        if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
+            String color = data.getStringExtra("Data");
+            view = this.getWindow().getDecorView();
+            view.setBackgroundColor(Color.parseColor(color));
+        }
+    }
+    //onActivityResult
+
+    public void animateMenu() { //says whether or not to open menu
+        if (isOpen) { //not open
 
             //to abide with espresso visibility standards view must be 90% visible
             findViewById(R.id.home).setVisibility(View.INVISIBLE);
@@ -160,8 +209,8 @@ public class Canvas extends AppCompatActivity {
             reflection.setClickable(false);
 
             isOpen = false;
-        }
-        else{ //open
+
+        } else { //open
 
             //to abide with espresso visibility standards view must be 90% visible
             findViewById(R.id.home).setVisibility(View.VISIBLE);
@@ -203,6 +252,6 @@ public class Canvas extends AppCompatActivity {
 
             isOpen = true;
 
-    }}
-
+        }
+    }
 }
